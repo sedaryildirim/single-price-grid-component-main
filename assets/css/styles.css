@@ -3,15 +3,14 @@
 
 :root {
     /* Colors */
-    /* Primary */
     --cyan: hsl(179, 62%, 43%);
+    --light-cyan: hsl(179, 59%, 47%);
     --yellow: hsl(71, 73%, 54%);
-    /* Neutral */
     --light-gray: hsl(204, 43%, 93%);
     --grayish-blue: hsl(218, 22%, 67%);
+    
     /* Typography */
     --font-size-paragraph: 16px;
-    /* Font weights */
     --font-weight-regular: 400;
     --font-weight-bold: 700;
 }
@@ -28,24 +27,133 @@ body {
     font-family: "Karla", sans-serif;
     font-size: var(--font-size-paragraph);
     line-height: 1.5;
+    background-color: var(--light-gray);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 24px;
+    padding: 2rem;
+}
+
+.wrapper {
+    max-width: 635px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    padding: 2rem;
+}
+
+.community-card {
+    background-color: white;
+}
+
+.community-card h1 {
+    color: var(--cyan);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.community-card h2 {
+    color: var(--yellow);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.community-card p {
+    color: var(--grayish-blue);
+    font-size: 1rem;
+}
+
+.subscription-card {
+    background-color: var(--cyan);
+    color: white;
+}
+
+.subscription-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.span-price {
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    margin-right: 0.5rem;
+}
+
+.sign-up-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--yellow);
+    color: white;
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0;
+}
+
+.sign-up-btn:hover {
+    background-color: hsl(71, 73%, 48%); /* Slightly darker yellow */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    top: -2px; /* Slight upward movement */
+}
+
+.sign-up-btn:active {
+    top: 1px; /* Slight downward movement when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.why-us-card {
+    background-color: var(--light-cyan);
+    color: white;
+}
+
+.why-us-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.why-us-card li {
+    list-style: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
 }
 
 /* Attribution */
 .attribution {
     font-size: 11px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
+    margin-top: 2rem;
 }
+
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: var(--cyan);
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .community-card {
+        grid-column: 1 / 3;
+    }
 }
